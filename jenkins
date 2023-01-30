@@ -19,11 +19,5 @@ pipeline {
                 sh 'cd webapp'
             }
         }
-        stage ('static code analysis') {
-         steps {
-                withSonarQuabEnv(credentialsId: 'sonar-api')'
-                sh 'npm clean package sonar:sonar'
-            }
-        }
     }
 }
