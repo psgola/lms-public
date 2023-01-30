@@ -8,15 +8,15 @@ pipeline {
             }
         }
         stage ('build') {
-        
-            steps {
-                Sh 'cd webapp && npm install'
+             steps {
+                   echo 'building..'
+                   sh 'cd webapp && npm install'
          }
         }
         stage ('test') {
-        
-            steps {
-                Sh 'cd webapp && npm test'
+         steps {
+                echo 'testing'
+                sh 'cd webapp && npm test'
         }
         }
         }
