@@ -16,7 +16,7 @@ pipeline {
         stage ('test') {
          steps {
                 echo 'testing'
-                sh 'cd webapp && npm test'
+                sh 'cd webapp && test'
         }
         }
         }
