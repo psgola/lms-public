@@ -16,7 +16,7 @@ pipeline {
         stage ('test') {
          steps {
                 echo 'testing'
-                sh './jenkins/scripts/test.sh'
+                sh 'webapp/src/lib/test-utils/'
         }
         }
         }
