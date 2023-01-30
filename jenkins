@@ -16,7 +16,7 @@ pipeline {
         stage ('test') {
          steps {
                 echo 'testing'
-                sh 'webapp/src/lib/test-utils/'
+                sh 'cd webapp'
         }
         }
         }
