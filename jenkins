@@ -19,5 +19,11 @@ pipeline {
                 sh 'cd webapp'
         }
         }
+        stage ('static code analysis') {
+         steps {
+                'waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api''
+                sh 'npm clean package sonar:sonar'
+        }
+        }
         }
         }
