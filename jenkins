@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('static code analysis') {
          steps {
-                'waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api''
+                withSonarQuabEnv(credentialsId: 'sonar-api')'
                 sh 'npm clean package sonar:sonar'
             }
         }
