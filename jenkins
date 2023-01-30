@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage ('build') {
+            steps {
+                echo 'building...'
+                sh 'cd webapp && npm install'
+                sh 'cd webapp && npm run build'
+            }
+        }
+        stage ('deploy') {
+            steps {
+                echo 'deploying...'
+            }
+        }
+}   
+}
