@@ -2,18 +2,10 @@ pipeline {
     agent any
     
     stages {
-        stage ('build') {
+        stage ('gitcheckout') {
             steps {
-                echo 'building...'
-                sh 'cd webapp && npm install'
-                sh 'cd webapp && npm run build'
+                git branch: 'Project', url: 'https://github.com/psgola/lms-public.git'
             }
         }
-        stage ('deploy') {
-            steps {
-                echo 'deploying...'
-                sh 'scp -r webapp/dist ubuntu@172.31.13.18:/home/ubuntu/'
-            }
         }
-}   
-}
+        }
