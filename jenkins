@@ -7,5 +7,11 @@ pipeline {
                 git branch: 'Project', url: 'https://github.com/psgola/lms-public.git'
             }
         }
+        stage ('unit testing') {
+        
+            steps {
+                Sh 'mvn test'
+        }
+        }
         }
         }
